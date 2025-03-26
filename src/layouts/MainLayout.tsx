@@ -40,7 +40,9 @@ export function MainLayout({ children, title, subtitle }: MainLayoutProps) {
     if (path === "/teacher-ai") return "Teacher AI";
     if (path === "/resources") return "Resources";
     
-    return path.split("/").pop()?.replace("-", " ") || "Page";
+    return path.split("/").pop()?.split("-").map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(" ") || "Page";
   };
 
   return (
