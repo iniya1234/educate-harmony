@@ -1,12 +1,12 @@
 
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
-import { Outlet, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface MainLayoutProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   title?: string;
   subtitle?: string;
 }
@@ -55,7 +55,7 @@ export function MainLayout({ children, title, subtitle }: MainLayoutProps) {
               isAnimating ? "opacity-0" : "opacity-100"
             )}
           >
-            {children || <Outlet />}
+            {children}
           </div>
         </main>
       </div>

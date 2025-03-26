@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import AssignmentEvaluation from "./pages/AssignmentEvaluation";
 import TeacherAI from "./pages/TeacherAI";
 import NotFound from "./pages/NotFound";
+import { MainLayout } from "./layouts/MainLayout";
 
 const queryClient = new QueryClient();
 
@@ -20,9 +21,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/assignments" element={<AssignmentEvaluation />} />
-          <Route path="/teacher-ai" element={<TeacherAI />} />
+          <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
+          <Route path="/assignments" element={<MainLayout><AssignmentEvaluation /></MainLayout>} />
+          <Route path="/teacher-ai" element={<MainLayout><TeacherAI /></MainLayout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
