@@ -10,6 +10,7 @@ import AssignmentEvaluation from "./pages/AssignmentEvaluation";
 import TeacherAI from "./pages/TeacherAI";
 import NotFound from "./pages/NotFound";
 import { MainLayout } from "./layouts/MainLayout";
+import StudentReport from "./pages/StudentReport";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,8 @@ const App = () => (
             <Route path="/assignments" element={<AssignmentEvaluation />} />
             <Route path="/teacher-ai" element={<TeacherAI />} />
             <Route path="/resources" element={<NotFound />} />
+            <Route path="/student/:studentId" element={<StudentReport />} />
+            <Route path="/student/:studentId/assessment/:assessmentId" element={<StudentReport />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
