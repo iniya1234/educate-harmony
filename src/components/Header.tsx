@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Search, Bell, HelpCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { ApiKeySetup } from "@/components/ApiKeySetup";
 
 interface HeaderProps {
   title: string;
@@ -20,6 +21,8 @@ export function Header({ title, subtitle }: HeaderProps) {
         </div>
         
         <div className="flex items-center space-x-4">
+          <ApiKeySetup />
+          
           <div className="relative max-w-sm">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input

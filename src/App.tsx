@@ -21,9 +21,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/dashboard" element={<MainLayout><Dashboard /></MainLayout>} />
-          <Route path="/assignments" element={<MainLayout><AssignmentEvaluation /></MainLayout>} />
-          <Route path="/teacher-ai" element={<MainLayout><TeacherAI /></MainLayout>} />
+          <Route path="/" element={<MainLayout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/assignments" element={<AssignmentEvaluation />} />
+            <Route path="/teacher-ai" element={<TeacherAI />} />
+            <Route path="/resources" element={<NotFound />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

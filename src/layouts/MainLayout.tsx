@@ -4,14 +4,15 @@ import { Header } from "@/components/Header";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { Outlet } from "react-router-dom";
 
 interface MainLayoutProps {
-  children: React.ReactNode;
   title?: string;
   subtitle?: string;
+  children?: React.ReactNode;
 }
 
-export function MainLayout({ children, title, subtitle }: MainLayoutProps) {
+export function MainLayout({ title, subtitle }: MainLayoutProps) {
   const location = useLocation();
   const [pageKey, setPageKey] = useState(location.pathname);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -57,7 +58,7 @@ export function MainLayout({ children, title, subtitle }: MainLayoutProps) {
               isAnimating ? "opacity-0" : "opacity-100"
             )}
           >
-            {children}
+            <Outlet />
           </div>
         </main>
       </div>
